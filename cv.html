@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krka Orbit - Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --planetary: #334EAC;
+            --universe: #7096D1;
+            --milky-way: #FFF9F0;
+            --venus: #BAD6EB;
+            --meteor: #F7F2EB;
+            --galaxy: #081F5C;
+            --sky: #D0E3FF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--galaxy), var(--planetary));
+            color: var(--milky-way);
+            min-height: 100vh;
+        }
+
+        /* RUNNING TEXT ATAS */
+        .marquee-wrapper {
+            background-color: var(--sky);
+            color: var(--galaxy);
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 0;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* NAVBAR / MENU NAVIGASI */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(8, 31, 92, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--universe);
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--venus);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--milky-way);
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--universe);
+            color: var(--galaxy);
+        }
+
+        /* LAYOUT CV CONTAINER */
+        .cv-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* KARTU PROFIL UTAMA */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--universe);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* KOTAK FOTO UKURAN 3:4 */
+        .photo-space {
+            width: 150px; 
+            height: 200px; 
+            border: 2px dashed var(--universe);
+            border-radius: 10px;
+            background: rgba(8, 31, 92, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .photo-space img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-card h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            color: var(--venus);
+            margin: 10px 0 5px 0;
+        }
+
+        .profile-card p {
+            font-size: 1.1rem;
+            color: var(--universe);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* BLOK SEKSI CV */
+        .cv-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(112, 150, 209, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cv-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--venus);
+            margin-top: 0;
+            border-bottom: 2px dashed var(--universe);
+            padding-bottom: 10px;
+        }
+
+        /* GRID UNTUK DETAIL BIODATA */
+        .biodata-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-item h4 {
+            margin: 0 0 5px 0;
+            color: var(--universe);
+            font-size: 0.95rem;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--meteor);
+        }
+
+        /* KEAHLIAN / SKILL STYLING */
+        .skill-box {
+            background: rgba(51, 78, 172, 0.2);
+            border: 1px solid rgba(112, 150, 209, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .skill-box h3 {
+            margin: 0 0 8px 0;
+            color: var(--venus);
+            font-size: 1.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .skill-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--meteor);
+            opacity: 0.9;
+        }
+
+        /* TIMELINE PENDIDIKAN */
+        .timeline {
+            border-left: 3px solid var(--universe);
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            background: var(--venus);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--sky);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--venus);
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 2px 0 5px 0;
+            color: var(--meteor);
+        }
+
+        .timeline-desc {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* EXPERIENCE STYLING */
+        .experience-box {
+            line-height: 1.8;
+            color: var(--meteor);
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 5px; display: inline-block; }
+            .biodata-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-wrapper">
+        <marquee scrollamount="6">🌌 CURRICULUM VITAE — PORTFOLIO OF EDUCATION, NETWORKING EXPERTISE, AND IT PROFILE 🚀</marquee>
+    </div>
+
+    <nav>
+        <div class="nav-logo">🌀 Karkirkur</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="cv.html" class="active">CV</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="kontak.html">Contact</a>
+            <a href="registrasi.html">Registration</a>
+        </div>
+    </nav>
+
+    <div class="cv-container">
+        
+        <div class="profile-card">
+            <div class="photo-space">
+                <img src="cvfot.jpeg" alt="M. Arkha Muvi Djamal Photo">
+            </div>
+            <h1>M. Arkha Muvi Djamal</h1>
+            <p>IT Network Student & Tech Enthusiast</p>
+        </div>
+
+        <div class="cv-section">
+            <h2>👤 Personal Info</h2>
+            <div class="biodata-grid">
+                <div class="info-item">
+                    <h4>Place, Date of Birth:</h4>
+                    <p>Bogor, 03 April 2009</p>
+                </div>
+                <div class="info-item">
+                    <h4>Gender</h4>
+                    <p>Male</p>
+                </div>
+                <div class="info-item">
+                    <h4>Address</h4>
+                    <p>Jalan Lodaya 2 Cilibende RT003/RW005</p>
+                </div>
+                <div class="info-item">
+                    <h4>Focus Study</h4>
+                    <p>Network Engineering & System Support</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>🎓 Education</h2>
+            <div class="timeline">
+                <div class="timeline-item" style="margin-bottom: 25px;">
+                    <div class="timeline-year">2024 - Present</div>
+                    <div class="timeline-title">SMK NEGERI 3 BOGOR</div>
+                    <div class="timeline-desc">Majoring in Computer and Network Engineering (TKJ). Actively learning network infrastructure, hardware systems, and configuration.</div>
+                </div>
+                
+                <div class="timeline-item" style="margin-bottom: 25px;">
+                    <div class="timeline-year">2021 - 2024</div>
+                    <div class="timeline-title">SMP NEGERI 20 BOGOR</div>
+                </div>
+                
+                <div class="timeline-item" style="margin-bottom: 10px;">
+                    <div class="timeline-year">2017 - 2021</div>
+                    <div class="timeline-title">SD NEGERI BOGOR BARU</div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="cv-section">
+            <h2>⚡ Skills</h2>
+            
+            <div class="skill-box">
+                <h3>1. MikroTik Configuration</h3>
+                <p>Experienced in configuring MikroTik routers, including IP addressing, DHCP, NAT, routing, and firewall to build stable and secure network connections.</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>2. PC Assembly & Troubleshooting</h3>
+                <p>Skilled in assembling, upgrading, and troubleshooting computer hardware to ensure reliable system performance.</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>3. Fiber Optic & UTP Cabling</h3>
+                <p>Capable of creating, installing, and testing Fiber Optic (FO) and UTP cables for stable and efficient network connectivity.</p>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>⏳ Experience</h2>
+            <div class="experience-box">
+                Through hands-on practice, I have gained experience in PC assembly and disassembly, as well as creating, installing, and testing UTP and Fiber Optic (FO) cables, helping me build a strong foundation in computer hardware and networking.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

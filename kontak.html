@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krka Orbit - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --planetary: #334EAC;
+            --universe: #7096D1;
+            --milky-way: #FFF9F0;
+            --venus: #BAD6EB;
+            --meteor: #F7F2EB;
+            --galaxy: #081F5C;
+            --sky: #D0E3FF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--galaxy), var(--planetary));
+            color: var(--milky-way);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* RUNNING TEXT ATAS */
+        .marquee-wrapper {
+            background-color: var(--sky);
+            color: var(--galaxy);
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 0;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* NAVBAR / MENU NAVIGASI */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(8, 31, 92, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--universe);
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--venus);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--milky-way);
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--universe);
+            color: var(--galaxy);
+        }
+
+        /* CONTACT CONTAINER */
+        .contact-container {
+            max-width: 550px;
+            margin: auto;
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-container h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            color: var(--venus);
+            margin-bottom: 10px;
+        }
+
+        .contact-subtitle {
+            color: var(--universe);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* KARTU LINK KONTAK */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--universe);
+            border-radius: 15px;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: var(--milky-way);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 25px rgba(112, 150, 209, 0.2);
+        }
+
+        /* ICON BOX STYLING */
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(8, 31, 92, 0.6);
+            border: 1px solid rgba(112, 150, 209, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            color: var(--universe);
+            transition: all 0.3s ease;
+        }
+
+        /* Efek warna menyala pas di-hover */
+        .contact-card:hover .icon-box.whatsapp { color: #25D366; border-color: #25D366; box-shadow: 0 0 10px rgba(37, 211, 102, 0.4); }
+        .contact-card:hover .icon-box.instagram { color: #E1306C; border-color: #E1306C; box-shadow: 0 0 10px rgba(225, 48, 108, 0.4); }
+        .contact-card:hover .icon-box.email { color: var(--sky); border-color: var(--sky); box-shadow: 0 0 10px rgba(208, 227, 255, 0.4); }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            color: var(--venus);
+        }
+
+        .contact-info p {
+            margin: 4px 0 0 0;
+            font-size: 0.95rem;
+            color: var(--meteor);
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 5px; display: inline-block; }
+            .contact-container h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-wrapper">
+        <marquee scrollamount="6">🌌 CONNECT WITH ORBIT — GET IN TOUCH FOR COLLABORATIONS, NETWORKING, OR FOOTBALL DISCUSSIONS 📞</marquee>
+    </div>
+
+    <nav>
+        <div class="nav-logo">🌀 Karkirkur</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="cv.html">CV</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="kontak.html" class="active">Contact</a>
+            <a href="registrasi.html">Registration</a>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <h1>Contact Me</h1>
+        <p class="contact-subtitle">Feel free to reach out anytime! Let's connect and discuss technology or sports.</p>
+        
+        <div class="contact-list">
+            
+            <a href="https://wa.me/6285892714302" target="_blank" class="contact-card">
+                <div class="icon-box whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-info">
+                    <h3>Phone / WhatsApp</h3>
+                    <p>+62 858-9271-4302</p>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/arkamvdjml" target="_blank" class="contact-card">
+                <div class="icon-box instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="contact-info">
+                    <h3>Instagram</h3>
+                    <p>@arkamvdjml</p>
+                </div>
+            </a>
+
+            <a href="mailto:123arka9000@gmail.com" class="contact-card">
+                <div class="icon-box email">
+                    <i class="far fa-envelope"></i>
+                </div>
+                <div class="contact-info">
+                    <h3>Email Address</h3>
+                    <p>123arka9000@gmail.com</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
